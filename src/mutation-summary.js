@@ -112,7 +112,7 @@ var NodeChange = (function () {
         this.isCaseInsensitive =
             this.node.nodeType === Node.ELEMENT_NODE &&
                 this.node instanceof HTMLElement &&
-                this.node.ownerDocument instanceof HTMLDocument;
+                this.node.ownerDocument instanceof Document;
     }
     NodeChange.prototype.getAttributeOldValue = function (name) {
         if (!this.attributeOldValues)
