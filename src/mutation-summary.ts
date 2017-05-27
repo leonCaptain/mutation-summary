@@ -126,8 +126,11 @@ class NodeChange {
               public characterDataOldValue:string = null) {
     this.isCaseInsensitive =
         this.node.nodeType === Node.ELEMENT_NODE &&
-        this.node instanceof HTMLElement &&
-        this.node.ownerDocument instanceof Document;
+        this.node instanceof HTMLElement 
+        
+    if(this.isCaseInsensitive) {
+        this.isCaseInsensitive = HTMLDocument? this.node.ownerDocument instanceof HTMLDocument : this.node.ownerDocument instanceof Document
+    }
   }
 
   getAttributeOldValue(name:string):string {
