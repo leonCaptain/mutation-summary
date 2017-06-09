@@ -114,7 +114,7 @@ var NodeChange = (function () {
             this.node instanceof HTMLElement 
         
         if(this.isCaseInsensitive) {
-            this.isCaseInsensitive = HTMLDocument? this.node.ownerDocument instanceof HTMLDocument : this.node.ownerDocument instanceof Document
+            this.isCaseInsensitive =  typeof(HTMLDocument) != "undefined"? this.node.ownerDocument instanceof HTMLDocument : this.node.ownerDocument instanceof Document
         }
     }
     NodeChange.prototype.getAttributeOldValue = function (name) {
