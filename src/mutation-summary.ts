@@ -981,7 +981,7 @@ class Selector {
   private isMatching(el:Element):boolean {
     if(!el[Selector.matchesSelector]) {
       return false;
-    }
+    }    
     return el[Selector.matchesSelector](this.selectorString);
   }
 
