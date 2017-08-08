@@ -783,6 +783,9 @@ var Selector = (function () {
         configurable: true
     });
     Selector.prototype.isMatching = function (el) {
+        if(typeof(el[Selector.matchesSelector]) === 'undefined' ) {
+            return false;
+        }
         return el[Selector.matchesSelector](this.selectorString);
     };
     Selector.prototype.wasMatching = function (el, change, isMatching) {
